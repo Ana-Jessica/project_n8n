@@ -1,0 +1,247 @@
+/* Reset básico e fontes */
+:root {
+    --primary-color: #00aeff;
+    --dark-color: #5a5a5a;
+    --light-color: aliceblue;
+    --bg-color: aliceblue;
+    --font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: auto;
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    background-color: var(--bg-color);
+    color: var(--dark-color);
+}
+
+/* Utilitários */
+.container {
+    max-width: 1100px;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 4rem;
+}
+
+.section {
+    padding: 4rem 0;
+}
+
+.section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.bg-light {
+    background-color: var(--light-color);
+}
+
+/* Navbar */
+.navbar {
+    background: var(--dark-color);
+    color: #fff;
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+.navbar .nav-links {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+}
+
+.navbar .nav-links li {
+    margin-left: 4rem;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: var(--primary-color);
+}
+
+/* Seção Hero */
+.hero {
+    background: var(--dark-color);
+    color: #fff;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Duas colunas de tamanho igual */
+    align-items: center; /* <<< IMPORTANTE: Alinha os itens (texto e imagem) verticalmente ao centro */
+    padding: 0 4rem; /* Adiciona um espaçamento nas laterais */
+    gap: 2rem; /* Cria um espaço entre a coluna de texto e a de imagem */
+}
+
+.hero-text {
+    /* O texto já deve estar alinhado à esquerda por padrão, mas podemos garantir */
+    text-align: left;
+}
+
+.hero-image img {
+    max-width: 100%; /* Garante que a imagem não ultrapasse seu contêiner */
+    height: auto; /* Mantém a proporção da imagem */
+    display: block; /* Remove espaços extras abaixo da imagem */
+    margin: auto; /* Ajuda a centralizar a imagem dentro da sua coluna */
+    border-radius: 10%; /* Deixa a imagem redonda, um estilo moderno para fotos de perfil */
+    max-height: 400px; /* Define uma altura máxima para a imagem */
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.hero .subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.btn {
+    display: inline-block;
+    background: var(--primary-color);
+    color: #fff;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    transition: background 0.3s;
+}
+
+.btn:hover {
+    background: #0089c9;
+}
+
+/* Sobre */
+#sobre p {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+/* Projetos */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.project-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.project-card h3 {
+    padding: 1rem 1.5rem 0.5rem;
+}
+
+.project-card p {
+    padding: 0 1.5rem;
+    flex-grow: 1;
+}
+
+.project-links {
+    padding: 1.5rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.project-links a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* Habilidades */
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.skill-item {
+    background: var(--light-color);
+    padding: 0.8rem 1.5rem;
+    border-radius: 20px;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/* Footer */
+.footer {
+    background: var(--dark-color);
+    color: #fff;
+    text-align: center;
+    padding: 3rem 0;
+}
+
+.footer .email {
+    font-size: 1.2rem;
+    margin: 1rem 0;
+}
+
+.social-links a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: var(--primary-color);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero .subtitle {
+        font-size: 1.2rem;
+    }
+
+    .navbar .nav-links {
+        display: none; /* Em um projeto real, aqui entraria um menu hamburguer */
+    }
+}
